@@ -6,15 +6,13 @@ import { motion } from "framer-motion";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
-
-import { Work } from "../data/WorkData";
 import Card from "../subComponents/Card";
+import BigTitle from "../subComponents/BigTitle";
 import { YinYang } from "./AllSvgs";
-import BigTitlte from "../subComponents/BigTitlte";
+import { Work } from "../data/WorkData";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
-
   height: 400vh;
   position: relative;
   display: flex;
@@ -27,9 +25,9 @@ const Main = styled(motion.ul)`
   left: calc(10rem + 15vw);
   height: 40vh;
   display: flex;
-
   color: white;
 `;
+
 const Rotate = styled.span`
   display: block;
   position: fixed;
@@ -45,7 +43,6 @@ const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-
     transition: {
       staggerChildren: 0.5,
       duration: 0.5,
@@ -58,13 +55,11 @@ const WorkPage = () => {
   const yinyang = useRef(null);
 
   useEffect(() => {
-    let element = ref.current;
+    const element = ref.current;
 
     const rotate = () => {
       element.style.transform = `translateX(${-window.pageYOffset}px)`;
-
-      return (yinyang.current.style.transform =
-        "rotate(" + -window.pageYOffset + "deg)");
+      yinyang.current.style.transform = `rotate(${-window.pageYOffset}deg)`;
     };
 
     window.addEventListener("scroll", rotate);
@@ -79,7 +74,6 @@ const WorkPage = () => {
         <LogoComponent theme="dark" />
         <SocialIcons theme="dark" />
         <PowerButton />
-
         <Main ref={ref} variants={container} initial="hidden" animate="show">
           {Work.map((d) => (
             <Card key={d.id} data={d} />
@@ -88,8 +82,7 @@ const WorkPage = () => {
         <Rotate ref={yinyang}>
           <YinYang width={80} height={80} fill={DarkTheme.text} />
         </Rotate>
-
-        <BigTitlte text="WORK" top="10%" right="20%" />
+        <BigTitle text="WORK" top="10%" right="20%" />
       </Box>
     </ThemeProvider>
   );

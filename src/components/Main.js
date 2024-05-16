@@ -8,12 +8,16 @@ import SocialIcons from "../subComponents/SocialIcons";
 import { YinYang } from "./AllSvgs";
 import Intro from "./Intro";
 
+const rotate = keyframes`
+  from { transform: rotate(0); }
+  to { transform: rotate(360deg); }
+`;
+
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-
   position: relative;
 
   h2,
@@ -38,18 +42,9 @@ const Contact = styled(NavLink)`
   text-decoration: none;
   z-index: 1;
 `;
-// const BLOG = styled(NavLink)`
-//   color: ${(props) => props.theme.text};
-//   position: absolute;
-//   top: 50%;
-//   right: calc(1rem + 2vw);
-//   transform: rotate(90deg) translate(-50%, -50%);
-//   text-decoration: none;
-//   z-index: 1;
-// `;
+
 const WORK = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-
   position: absolute;
   top: 50%;
   left: calc(1rem + 2vw);
@@ -64,7 +59,6 @@ const BottomBar = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-
   display: flex;
   justify-content: space-evenly;
 `;
@@ -74,6 +68,7 @@ const ABOUT = styled(NavLink)`
   text-decoration: none;
   z-index: 1;
 `;
+
 const SKILLS = styled(NavLink)`
   color: ${(props) => props.theme.text};
   position: absolute;
@@ -82,15 +77,6 @@ const SKILLS = styled(NavLink)`
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
-`;
-
-const rotate = keyframes`
-from{
-    transform: rotate(0);
-}
-to{
-    transform: rotate(360deg);
-}
 `;
 
 const Center = styled.button`
@@ -102,7 +88,6 @@ const Center = styled.button`
   outline: none;
   background-color: transparent;
   cursor: pointer;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -144,26 +129,15 @@ const Main = () => {
         <LogoComponent theme={click ? "dark" : "light"} />
         <SocialIcons theme={click ? "dark" : "light"} />
 
-        <Center click={click}>
-          <YinYang
-            onClick={() => handleClick()}
-            width={click ? 120 : 200}
-            height={click ? 120 : 200}
-            fill="currentColor"
-          />
+        <Center click={click} onClick={handleClick}>
+          <YinYang width={click ? 120 : 200} height={click ? 120 : 200} fill="currentColor" />
           <span>click here</span>
         </Center>
 
         <Contact to="/contact">
           <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
+            initial={{ y: -200, transition: { type: "spring", duration: 1.5, delay: 1 } }}
+            animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -172,14 +146,8 @@ const Main = () => {
         </Contact>
         <SKILLS to="/skills">
           <motion.h2
-            initial={{
-              y: 200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
+            initial={{ y: 200, transition: { type: "spring", duration: 1.5, delay: 1 } }}
+            animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -187,16 +155,10 @@ const Main = () => {
           </motion.h2>
         </SKILLS>
 
-        <WORK to="/work" click={+click}>
+        <WORK to="/work" click={click}>
           <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
+            initial={{ y: -200, transition: { type: "spring", duration: 1.5, delay: 1 } }}
+            animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 1 } }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
@@ -204,16 +166,10 @@ const Main = () => {
           </motion.h2>
         </WORK>
         <BottomBar>
-          <ABOUT to="/about" click={+click}>
+          <ABOUT to="/about" click={click}>
             <motion.h2
-              initial={{
-                y: 200,
-                transition: { type: "spring", duration: 1.5, delay: 1 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: "spring", duration: 1.5, delay: 1 },
-              }}
+              initial={{ y: 200, transition: { type: "spring", duration: 1.5, delay: 1 } }}
+              animate={{ y: 0, transition: { type: "spring", duration: 1.5, delay: 1 } }}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -222,7 +178,7 @@ const Main = () => {
           </ABOUT>
         </BottomBar>
       </Container>
-      {click ? <Intro click={click} /> : null}
+      {click && <Intro click={click} />}
     </MainContainer>
   );
 };

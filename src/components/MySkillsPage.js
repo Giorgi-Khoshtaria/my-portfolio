@@ -23,7 +23,7 @@ const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
-  padding: 2rem;
+  padding: 32px; /* 2rem converted to px */
   width: 30vw;
   height: 60vh;
   z-index: 3;
@@ -45,7 +45,7 @@ const Title = styled.h2`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: calc(1em + 1vw);
+  font-size: calc(16px + 1vw); /* 1em converted to 16px */
 
   ${Main}:hover & {
     & > * {
@@ -54,26 +54,27 @@ const Title = styled.h2`
   }
 
   & > *:first-child {
-    margin-right: 1rem;
+    margin-right: 16px; /* 1rem converted to px */
   }
 `;
 
 const Description = styled.div`
   color: ${(props) => props.theme.text};
-  font-size: calc(0.6em + 1vw);
-  padding: 0.5rem 0;
+  font-size: calc(9.6px + 1vw); /* 0.6em converted to px */
+  padding: 8px 0; /* 0.5rem converted to px */
 
   ${Main}:hover & {
     color: ${(props) => props.theme.body};
   }
 
   strong {
-    margin-bottom: 1rem;
+    margin-bottom: 16px; /* 1rem converted to px */
     text-transform: uppercase;
   }
+
   ul,
   p {
-    margin-left: 2rem;
+    margin-left: 32px; /* 2rem converted to px */
   }
 `;
 
@@ -91,7 +92,7 @@ const MySkillsPage = () => {
             <Develope width={40} height={40} /> Frontend Developer
           </Title>
           <Description>
-            I value business or brand for which i'm creating, thus i enjoy bringing new ideas to
+            I value business or brand for which I'm creating, thus I enjoy bringing new ideas to
             life.
           </Description>
           <Description>

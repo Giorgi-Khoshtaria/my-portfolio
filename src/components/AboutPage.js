@@ -36,7 +36,7 @@ const Spaceman = styled.div`
 const Main = styled.div`
   border: 2px solid ${(props) => props.theme.text};
   color: ${(props) => props.theme.text};
-  padding: 2rem;
+  padding: 32px;
   width: 50vw;
   height: 60vh;
   z-index: 3;
@@ -44,12 +44,12 @@ const Main = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: calc(0.6rem + 1vw);
+  font-size: calc(10px + 1vw);
   backdrop-filter: blur(4px);
 
   position: absolute;
-  left: calc(5rem + 5vw);
-  top: 10rem;
+  left: calc(80px + 5vw);
+  top: 160px;
   font-family: "Ubuntu Mono", monospace;
   font-style: italic;
 `;

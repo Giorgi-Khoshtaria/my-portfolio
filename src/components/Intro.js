@@ -32,6 +32,7 @@ const Box = styled(motion.div)`
 
   z-index: 1;
 `;
+
 const SubBox = styled.div`
   width: 50%;
   position: relative;
@@ -48,9 +49,9 @@ const SubBox = styled.div`
 `;
 
 const Text = styled.div`
-  font-size: calc(1em + 1.5vw);
+  font-size: calc(16px + 1.5vw);
   color: ${(props) => props.theme.body};
-  padding: 2rem;
+  padding: 32px;
   cursor: pointer;
 
   display: flex;
@@ -59,7 +60,7 @@ const Text = styled.div`
 
   & > *:last-child {
     color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
-    font-size: calc(0.5rem + 1.5vw);
+    font-size: calc(8px + 1.5vw);
     font-weight: 300;
   }
 `;
