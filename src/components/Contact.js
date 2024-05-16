@@ -21,6 +21,9 @@ const Container = styled.div`
   justify-content: center;
   position: relative;
   overflow: hidden;
+  @media (max-width: 769px) {
+    padding-top: 50px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -44,7 +47,14 @@ const Form = styled.form`
 
 const InputGroup = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 200px;
+  @media (max-width: 1250px) {
+    gap: 50px;
+  }
+  @media (max-width: 769px) {
+    gap: 16px;
+    flex-direction: column;
+  }
 `;
 
 const Label = styled.label`

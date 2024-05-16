@@ -7,8 +7,8 @@ const Box = styled.div`
   display: flex;
   cursor: pointer;
   position: fixed;
-  left: 8rem;
-  top: 3rem;
+  left: 128px;
+  top: 48px;
   z-index: 10;
   margin-left: 35px;
 
@@ -46,7 +46,7 @@ const Line = styled.span`
 
   animation: ${play} 1s ease infinite;
   animation-play-state: ${(props) => (props.click ? "running" : "paused")};
-  height: 1rem;
+  height: 8px;
   width: 2px;
   margin: 0 0.1rem;
 `;

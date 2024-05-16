@@ -31,14 +31,14 @@ const MainContainer = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 2rem;
+  padding: 32px;
 `;
 
 const Contact = styled(NavLink)`
   color: ${(props) => props.theme.text};
   position: absolute;
-  top: 2rem;
-  right: calc(1rem + 2vw);
+  top: 32px;
+  right: calc(16px + 2vw);
   text-decoration: none;
   z-index: 1;
 `;
@@ -47,7 +47,7 @@ const WORK = styled(NavLink)`
   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
   position: absolute;
   top: 50%;
-  left: calc(1rem + 2vw);
+  left: calc(16px + 2vw);
   transform: translate(-50%, -50%) rotate(-90deg);
   text-decoration: none;
   z-index: 1;
@@ -55,7 +55,7 @@ const WORK = styled(NavLink)`
 
 const BottomBar = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: 16px;
   left: 0;
   right: 0;
   width: 100%;
@@ -73,7 +73,7 @@ const SKILLS = styled(NavLink)`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 50%;
-  right: calc(1rem + 2vw);
+  right: calc(16px + 2vw);
   transform: rotate(90deg) translate(-50%, -50%);
   text-decoration: none;
   z-index: 1;
@@ -100,7 +100,7 @@ const Center = styled.button`
 
   & > :last-child {
     display: ${(props) => (props.click ? "none" : "inline-block")};
-    padding-top: 1rem;
+    padding-top: 16px;
   }
 `;
 

@@ -59,7 +59,7 @@ const Link = styled.a`
   background-color: ${(props) => props.theme.body};
   color: ${(props) => props.theme.text};
   text-decoration: none;
-  padding: 0.5rem calc(2rem + 2vw);
+  padding: 8px calc(32px + 2vw);
   border-radius: 0 0 0 50px;
   font-size: calc(1em + 0.5vw);
 

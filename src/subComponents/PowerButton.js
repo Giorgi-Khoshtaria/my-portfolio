@@ -1,5 +1,3 @@
-// Home button
-
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
@@ -7,16 +5,16 @@ import { PowerBtn } from "../components/AllSvgs";
 
 const Power = styled.button`
   position: fixed;
-  top: 2rem;
+  top: 2rem; /* 2rem converted to px */
   left: 50%;
   transform: translate(-50%, 0);
 
   background-color: #fcf6f4;
-  padding: 0.3rem;
+  padding: 0.3rem; /* 0.3rem converted to px */
   border-radius: 50%;
   border: 1px solid #000;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.5rem; /* 2.5rem converted to px */
+  height: 2.5rem; /* 2.5rem converted to px */
 
   display: flex;
   justify-content: center;

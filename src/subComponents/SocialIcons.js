@@ -12,18 +12,18 @@ const Icons = styled.div`
 
   position: fixed;
   bottom: 0;
-  left: 2rem;
+  left: 32px;
 
   z-index: 3;
 
   & > *:not(:last-child) {
-    margin: 0.5rem 0;
+    margin: 8px 0;
   }
 `;
 
 const Line = styled(motion.span)`
   width: 2px;
-  height: 8rem;
+  height: 128px;
   background-color: ${(props) => (props.color === "dark" ? DarkTheme.text : DarkTheme.body)};
 `;
 

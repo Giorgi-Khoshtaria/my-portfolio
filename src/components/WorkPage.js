@@ -1,91 +1,114 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import styled, { ThemeProvider } from "styled-components";
-import { DarkTheme } from "./Themes";
-import { motion } from "framer-motion";
+import { lightTheme } from "./Themes";
+import { Develope } from "./AllSvgs";
 
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
-import Card from "../subComponents/Card";
-import BigTitle from "../subComponents/BigTitle";
-import { YinYang } from "./AllSvgs";
-import { Work } from "../data/WorkData";
+import ParticleComponent from "../subComponents/ParticleComponent";
+import BigTitle from "../subComponents/BigTitlte";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
-  height: 400vh;
+  width: 100vw;
+  height: 100vh;
   position: relative;
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
 `;
 
-const Main = styled(motion.ul)`
-  position: fixed;
-  top: 12rem;
-  left: calc(10rem + 15vw);
-  height: 40vh;
+const Main = styled.div`
+  border: 2px solid ${(props) => props.theme.text};
+  color: ${(props) => props.theme.text};
+  background-color: ${(props) => props.theme.body};
+  padding: 32px; /* 2rem converted to px: 32px */
+  width: 30vw;
+  height: 60vh;
+  z-index: 3;
+  line-height: 1.5;
+  cursor: pointer;
+
+  font-family: "Ubuntu Mono", monospace;
   display: flex;
-  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:hover {
+    color: ${(props) => props.theme.body};
+    background-color: ${(props) => props.theme.text};
+  }
 `;
 
-const Rotate = styled.span`
-  display: block;
-  position: fixed;
-  right: 1rem;
-  bottom: 1rem;
-  width: 80px;
-  height: 80px;
-  z-index: 1;
+const Title = styled.h2`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: calc(16px + 1vw); /* 1em converted to 16px */
+
+  ${Main}:hover & {
+    & > * {
+      fill: ${(props) => props.theme.body};
+    }
+  }
+
+  & > *:first-child {
+    margin-right: 16px; /* 1rem converted to px: 16px */
+  }
 `;
 
-// Framer-motion Configuration
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-      duration: 0.5,
-    },
-  },
-};
+const Description = styled.div`
+  color: ${(props) => props.theme.text};
+  font-size: calc(9.6px + 1vw); /* 0.6em converted to px */
+  padding: 8px 0; /* 0.5rem converted to px: 8px */
 
-const WorkPage = () => {
-  const ref = useRef(null);
-  const yinyang = useRef(null);
+  ${Main}:hover & {
+    color: ${(props) => props.theme.body};
+  }
 
-  useEffect(() => {
-    const element = ref.current;
+  strong {
+    margin-bottom: 16px; /* 1rem converted to px: 16px */
+    text-transform: uppercase;
+  }
 
-    const rotate = () => {
-      element.style.transform = `translateX(${-window.pageYOffset}px)`;
-      yinyang.current.style.transform = `rotate(${-window.pageYOffset}deg)`;
-    };
+  ul,
+  p {
+    margin-left: 32px; /* 2rem converted to px: 32px */
+  }
+`;
 
-    window.addEventListener("scroll", rotate);
-    return () => {
-      window.removeEventListener("scroll", rotate);
-    };
-  }, []);
-
+const MySkillsPage = () => {
   return (
-    <ThemeProvider theme={DarkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <Box>
-        <LogoComponent theme="dark" />
-        <SocialIcons theme="dark" />
+        <LogoComponent theme="light" />
+        <SocialIcons theme="light" />
         <PowerButton />
-        <Main ref={ref} variants={container} initial="hidden" animate="show">
-          {Work.map((d) => (
-            <Card key={d.id} data={d} />
-          ))}
+        <ParticleComponent theme="light" />
+
+        <Main>
+          <Title>
+            <Develope width={40} height={40} /> Frontend Developer
+          </Title>
+          <Description>
+            I value business or brand for which I'm creating, thus I enjoy bringing new ideas to
+            life.
+          </Description>
+          <Description>
+            <strong>Skills</strong>
+            <p>Html, Css, Js, Bootstrap, React, TypeScript, Styled-Components, NodeJs, MongoDB.</p>
+          </Description>
+          <Description>
+            <strong>Tools</strong>
+            <p>VScode, Github, Codepen etc.</p>
+          </Description>
         </Main>
-        <Rotate ref={yinyang}>
-          <YinYang width={80} height={80} fill={DarkTheme.text} />
-        </Rotate>
-        <BigTitle text="WORK" top="10%" right="20%" />
+
+        <BigTitle text="SKILLS" top="80%" right="30%" />
       </Box>
     </ThemeProvider>
   );
 };
 
-export default WorkPage;
+export default MySkillsPage;
