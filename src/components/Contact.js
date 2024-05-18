@@ -21,6 +21,7 @@ const Container = styled.div`
   justify-content: center;
   position: relative;
   overflow: hidden;
+  /* animation: ${float} 4s ease infinite; */
   @media (max-width: 769px) {
     padding-top: 50px;
   }
