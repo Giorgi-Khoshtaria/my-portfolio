@@ -24,7 +24,7 @@ const Main = styled.div`
   color: ${(props) => props.theme.text};
   background-color: ${(props) => props.theme.body};
   padding: 32px; /* 2rem converted to px */
-  width: 30vw;
+  width: 100vh;
   height: 60vh;
   z-index: 3;
   line-height: 1.5;
