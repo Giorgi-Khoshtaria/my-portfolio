@@ -3,14 +3,41 @@
 export const Work = [
   {
     id: 1,
-    name: "Restaurant Webite",
-    description:
-      "It is build on top of the Typescriopt, with styledComponents, Nodejs, and MongoDb",
-    tags: ["typescript", "styledComponents", "react-router", "nodejs", "mongodb"],
+    name: "Flowers shop ",
+    description: "It is build on top of the Typescriopt, with styledComponents",
+    tags: ["typescript", "styledComponents", "react-router"],
 
-    demo: "https://github.com/g1org11/crave_cart",
-    github: "https://github.com/g1org11/crave_cart",
+    demo: "https://flower-shop-git-master-giorgis-projects-02630e53.vercel.app/",
+    github: "https://github.com/Giorgi-Khoshtaria/FlowerShop",
   },
+  {
+    id: 1,
+    name: "Flowers shop 'Back-End'",
+    description: "It is build on top of the Nodejs, and MongoDb",
+    tags: ["nodejs", "mongodb"],
+
+    demo: "https://github.com/Giorgi-Khoshtaria/FlowersShop-back",
+    github: "https://github.com/Giorgi-Khoshtaria/FlowersShop-back",
+  },
+  {
+    id: 1,
+    name: "Restaurant Webite",
+    description: "It is build on top of the Typescriopt, with styledComponents",
+    tags: ["typescript", "styledComponents", "react-router", ,],
+
+    demo: "https://food-cave-front.vercel.app",
+    github: "https://github.com/Giorgi-Khoshtaria/Food-Cave-front",
+  },
+  {
+    id: 1,
+    name: "Restaurant Webite 'Back-End'",
+    description: "It is build on top of the Nodejs, and MongoDb",
+    tags: ["nodejs", "mongodb"],
+
+    demo: "https://github.com/Giorgi-Khoshtaria/Food-Cave-Back",
+    github: "https://github.com/Giorgi-Khoshtaria/Food-Cave-Back",
+  },
+
   {
     id: 2,
     name: "Red Explorers",
